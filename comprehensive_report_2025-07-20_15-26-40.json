@@ -1,0 +1,1381 @@
+{
+  "generated_at": "2025-07-20T15:26:40.378485",
+  "summary": {
+    "total_trending": 20,
+    "trending_movies": 20,
+    "trending_tv_shows": 20,
+    "sudden_spikes": 4
+  },
+  "movies": [
+    {
+      "adult": false,
+      "backdrop_path": "/etT14XfDEqhQZdD47ywpyihXPyW.jpg",
+      "id": 1087192,
+      "title": "How to Train Your Dragon",
+      "original_title": "How to Train Your Dragon",
+      "overview": "On the rugged isle of Berk, where Vikings and dragons have been bitter enemies for generations, Hiccup stands apart, defying centuries of tradition when he befriends Toothless, a feared Night Fury dragon. Their unlikely bond reveals the true nature of dragons, challenging the very foundations of Viking society.",
+      "poster_path": "/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        14,
+        10751,
+        28
+      ],
+      "popularity": 1173.2922,
+      "release_date": "2025-06-06",
+      "video": false,
+      "vote_average": 8.127,
+      "vote_count": 1002
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ApRxyHFuvv5yghedxXPJSm9FEDe.jpg",
+      "id": 1061474,
+      "title": "Superman",
+      "original_title": "Superman",
+      "overview": "Superman, a journalist in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.",
+      "poster_path": "/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "popularity": 434.5607,
+      "release_date": "2025-07-09",
+      "video": false,
+      "vote_average": 7.496,
+      "vote_count": 957
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/63RnEJRNzRDvi0Fv4jhrT2eh0fl.jpg",
+      "id": 1311031,
+      "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "original_title": "\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u57ce\u7de8 \u7b2c\u4e00\u7ae0 \u7317\u7aa9\u5ea7\u518d\u6765",
+      "overview": "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold \u2013 the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+      "poster_path": "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
+      "media_type": "movie",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        28,
+        14,
+        53
+      ],
+      "popularity": 262.0004,
+      "release_date": "2025-07-18",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/s94NjfKkcSczZ1FembwmQZwsuwY.jpg",
+      "id": 617126,
+      "title": "The Fantastic Four: First Steps",
+      "original_title": "The Fantastic Four: First Steps",
+      "overview": "Against the vibrant backdrop of a 1960s-inspired, retro-futuristic world, Marvel's First Family is forced to balance their roles as heroes with the strength of their family bond, while defending Earth from a ravenous space god called Galactus and his enigmatic Herald, Silver Surfer.",
+      "poster_path": "/x26MtUlwtWD26d0G0FXcppxCJio.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "popularity": 84.7121,
+      "release_date": "2025-07-23",
+      "video": false,
+      "vote_average": 8.4,
+      "vote_count": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cEQMqB3ahd4mfeUN6VGC0ouVnZZ.jpg",
+      "id": 1071585,
+      "title": "M3GAN 2.0",
+      "original_title": "M3GAN 2.0",
+      "overview": "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+      "poster_path": "/4a63rQqIDTrYNdcnTXdPsQyxVLo.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        53
+      ],
+      "popularity": 897.113,
+      "release_date": "2025-06-25",
+      "video": false,
+      "vote_average": 7.712,
+      "vote_count": 373
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hyxKzbKnVWWJelyO2fagFFTHu96.jpg",
+      "id": 1269208,
+      "title": "Wall to Wall",
+      "original_title": "84\uc81c\uacf1\ubbf8\ud130",
+      "overview": "A man who poured his life savings into a new apartment discovers its walls are full of disturbing noises, hostile neighbors and unsettling secrets.",
+      "poster_path": "/5hlNv3Kd9xovvSgrslWhMriGpZ8.jpg",
+      "media_type": "movie",
+      "original_language": "ko",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "popularity": 81.952,
+      "release_date": "2025-07-17",
+      "video": false,
+      "vote_average": 6.75,
+      "vote_count": 40
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
+      "id": 986056,
+      "title": "Thunderbolts*",
+      "original_title": "Thunderbolts*",
+      "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+      "poster_path": "/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "popularity": 225.4589,
+      "release_date": "2025-04-30",
+      "video": false,
+      "vote_average": 7.436,
+      "vote_count": 1892
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qwK9soQmmJ7kRdjLZVXblw3g7AQ.jpg",
+      "id": 7451,
+      "title": "xXx",
+      "original_title": "xXx",
+      "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \"recruits\" him to go on a mission, he's not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+      "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        12,
+        53,
+        80
+      ],
+      "popularity": 131.1256,
+      "release_date": "2002-08-09",
+      "video": false,
+      "vote_average": 5.949,
+      "vote_count": 4468
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hniP6c6Tss51qKc5vYMycDBDf9P.jpg",
+      "id": 1083433,
+      "title": "I Know What You Did Last Summer",
+      "original_title": "I Know What You Did Last Summer",
+      "overview": "When five friends inadvertently cause a deadly car accident, they cover up their involvement and make a pact to keep it a secret rather than face the consequences. A year later, their past comes back to haunt them and they're forced to confront a horrifying truth: someone knows what they did last summer\u2026and is hell-bent on revenge.",
+      "poster_path": "/A06yXys3hrCWu8xiNoHCFLTG5SH.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "popularity": 70.5847,
+      "release_date": "2025-07-16",
+      "video": false,
+      "vote_average": 5.754,
+      "vote_count": 57
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lSbblLngbeZIn6G4WXDcyQ6SLhw.jpg",
+      "id": 911430,
+      "title": "F1",
+      "original_title": "F1",
+      "overview": "Racing legend Sonny Hayes is coaxed out of retirement to lead a struggling Formula 1 team\u2014and mentor a young hotshot driver\u2014while chasing one more chance at glory.",
+      "poster_path": "/9PXZIUsSDh4alB80jheWX4fhZmy.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "popularity": 154.3843,
+      "release_date": "2025-06-25",
+      "video": false,
+      "vote_average": 7.627,
+      "vote_count": 830
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oPgXVSdGR9dGwbmvIToOCMmsdc2.jpg",
+      "id": 541671,
+      "title": "Ballerina",
+      "original_title": "Ballerina",
+      "overview": "Taking place during the events of John Wick: Chapter 3 \u2013 Parabellum, Eve Macarro begins her training in the assassin traditions of the Ruska Roma.",
+      "poster_path": "/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "popularity": 340.3796,
+      "release_date": "2025-06-04",
+      "video": false,
+      "vote_average": 7.481,
+      "vote_count": 1076
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zNriRTr0kWwyaXPzdg1EIxf0BWk.jpg",
+      "id": 1234821,
+      "title": "Jurassic World Rebirth",
+      "original_title": "Jurassic World Rebirth",
+      "overview": "Five years after the events of Jurassic World Dominion, covert operations expert Zora Bennett is contracted to lead a skilled team on a top-secret mission to secure genetic material from the world's three most massive dinosaurs. When Zora's operation intersects with a civilian family whose boating expedition was capsized, they all find themselves stranded on an island where they come face-to-face with a sinister, shocking discovery that's been hidden from the world for decades.",
+      "poster_path": "/q0fGCmjLu42MPlSO9OYWpI5w86I.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "popularity": 270.1476,
+      "release_date": "2025-07-01",
+      "video": false,
+      "vote_average": 6.368,
+      "vote_count": 713
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lP5kcBL67k4aduIEzlSTVRR4RBh.jpg",
+      "id": 1429834,
+      "title": "Almost Family",
+      "original_title": "Fam\u00edlia, Pero no Mucho",
+      "overview": "A Brazilian father finds a worthy opponent when he meets his daughter's Argentine in-laws, and a trip to Bariloche becomes the stage for a fun international rivalry.",
+      "poster_path": "/g0Q7m2s2k0ZWdzIs07AvPKHoA9Q.jpg",
+      "media_type": "movie",
+      "original_language": "pt",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 48.9619,
+      "release_date": "2025-07-17",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/l3ycQYwWmbz7p8otwbomFDXIEhn.jpg",
+      "id": 803796,
+      "title": "KPop Demon Hunters",
+      "original_title": "KPop Demon Hunters",
+      "overview": "When K-pop superstars Rumi, Mira and Zoey aren't selling out stadiums, they're using their secret powers to protect their fans from supernatural threats.",
+      "poster_path": "/jfS5KEfiwsS35ieZvdUdJKkwLlZ.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        14,
+        28,
+        35,
+        10402,
+        10751
+      ],
+      "popularity": 220.7205,
+      "release_date": "2025-06-20",
+      "video": false,
+      "vote_average": 8.577,
+      "vote_count": 692
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7Q2CmqIVJuDAESPPp76rWIiA0AD.jpg",
+      "id": 1011477,
+      "title": "Karate Kid: Legends",
+      "original_title": "Karate Kid: Legends",
+      "overview": "After a family tragedy, kung fu prodigy Li Fong is uprooted from his home in Beijing and forced to move to New York City with his mother. When a new friend needs his help, Li enters a karate competition \u2013 but his skills alone aren't enough. Li's kung fu teacher Mr. Han enlists original Karate Kid Daniel LaRusso for help, and Li learns a new way to fight, merging their two styles into one for the ultimate martial arts showdown.",
+      "poster_path": "/AEgggzRr1vZCLY86MAp93li43z.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        12,
+        18
+      ],
+      "popularity": 451.4609,
+      "release_date": "2025-05-08",
+      "video": false,
+      "vote_average": 7.262,
+      "vote_count": 475
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6van4BavoNXaZhCPdzLHNQ4Uc8H.jpg",
+      "id": 1087891,
+      "title": "The Amateur",
+      "original_title": "The Amateur",
+      "overview": "After his life is turned upside down when his wife is killed in a London terrorist attack, a brilliant but introverted CIA decoder takes matters into his own hands when his supervisors refuse to take action.",
+      "poster_path": "/SNEoUInCa5fAgwuEBMIMBGvkkh.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        53,
+        28
+      ],
+      "popularity": 93.1236,
+      "release_date": "2025-04-09",
+      "video": false,
+      "vote_average": 6.989,
+      "vote_count": 857
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nAxGnGHOsfzufThz20zgmRwKur3.jpg",
+      "id": 1233413,
+      "title": "Sinners",
+      "original_title": "Sinners",
+      "overview": "Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to discover that an even greater evil is waiting to welcome them back.",
+      "poster_path": "/4CkZl1LK6a5rXBqJB2ZP77h3N5i.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        28,
+        53
+      ],
+      "popularity": 86.6929,
+      "release_date": "2025-04-16",
+      "video": false,
+      "vote_average": 7.573,
+      "vote_count": 2083
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/znr3SYHph3FtTLpcFTeuMAAJ5mP.jpg",
+      "id": 648878,
+      "title": "Eddington",
+      "original_title": "Eddington",
+      "overview": "In May of 2020, a standoff between a small-town sheriff and mayor sparks a powder keg as neighbor is pitted against neighbor in Eddington, New Mexico.",
+      "poster_path": "/kg7lrTWGKyzLnj0E7BXl52nro1N.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        37,
+        35,
+        18
+      ],
+      "popularity": 17.8143,
+      "release_date": "2025-07-16",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 27
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uIpJPDNFoeX0TVml9smPrs9KUVx.jpg",
+      "id": 574475,
+      "title": "Final Destination Bloodlines",
+      "original_title": "Final Destination Bloodlines",
+      "overview": "Plagued by a violent recurring nightmare, college student Stefanie heads home to track down the one person who might be able to break the cycle and save her family from the grisly demise that inevitably awaits them all.",
+      "poster_path": "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "popularity": 215.2157,
+      "release_date": "2025-05-14",
+      "video": false,
+      "vote_average": 7.187,
+      "vote_count": 1672
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/aceYR6NcHfoAqz0Ov0E5eJAe3Nc.jpg",
+      "id": 1474683,
+      "title": "UFC 318: Holloway vs. Poirier 3",
+      "original_title": "UFC 318: Holloway vs. Poirier 3",
+      "overview": "UFC 318: Holloway vs. Poirier 3 was a mixed martial arts event produced by the Ultimate Fighting Championship that took place on July 19, 2025, at the Smoothie King Center in New Orleans, Louisiana.",
+      "poster_path": "/j7cPZPCO9jo0xxfghfChAWVpjuz.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28
+      ],
+      "popularity": 0.9895,
+      "release_date": "2025-07-19",
+      "video": false,
+      "vote_average": 0.0,
+      "vote_count": 0
+    }
+  ],
+  "tv_shows": [
+    {
+      "adult": false,
+      "backdrop_path": "/9DrORnlwnjt5SeJKcuE5sqOoIdV.jpg",
+      "id": 207468,
+      "name": "Kaiju No. 8",
+      "original_name": "\u602a\u7363\uff18\u53f7",
+      "overview": "In a world plagued by creatures known as Kaiju, Kafka Hibino aspired to enlist in The Defense Force. He makes a promise to enlist with his childhood friend, Mina Ashiro. Soon, life takes them in separate ways. While employed cleaning up after Kaiju battles, Kafka meets Reno Ichikawa. Reno's determination to join The Defense Force reawakens Kafka's promise to join Mina and protect humanity.",
+      "poster_path": "/bJxGs0w5RAhaX4fIUQu511rvm0S.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        10759,
+        10765
+      ],
+      "popularity": 107.9528,
+      "first_air_date": "2024-04-13",
+      "vote_average": 8.6,
+      "vote_count": 560,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oGsh97JAA6LYu92B6TEswrjac8W.jpg",
+      "id": 248852,
+      "name": "UNTAMED",
+      "original_name": "UNTAMED",
+      "overview": "In the vast expanse of Yosemite National Park, a woman's death draws a federal agent into lawless terrain \u2014 where nature obeys no rules but its own.",
+      "poster_path": "/wCJSNZcLT7EuKKW35my9VLmrkR7.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        18
+      ],
+      "popularity": 177.8413,
+      "first_air_date": "2025-07-17",
+      "vote_average": 7.672,
+      "vote_count": 58,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mcU5nwUqPJB6GeElDhKA68LKhqD.jpg",
+      "id": 253372,
+      "name": "The Institute",
+      "original_name": "The Institute",
+      "overview": "When 14 year old genius Luke Ellis is kidnapped, he awakens at The Institute, a facility full of children who all got there the same way he did, and who are all possessed of unusual abilities. In a nearby town, haunted former police officer Tim Jamieson has come looking to start a new life, but the peace and quiet won\u2019t last, as his story and Luke\u2019s are destined to collide.",
+      "poster_path": "/7JXZdWifaa6wL0XLRi0GJOlOA8y.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        10765
+      ],
+      "popularity": 94.4475,
+      "first_air_date": "2025-07-13",
+      "vote_average": 8.083,
+      "vote_count": 24,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/l5jzuehwynnoEWUb9z25auHXQM.jpg",
+      "id": 259909,
+      "name": "Dexter: Resurrection",
+      "original_name": "Dexter: Resurrection",
+      "overview": "Dexter Morgan awakens from a coma to find Harrison gone without a trace. Realizing the weight of what he put his son through, Dexter sets out for New York City, determined to find him and make things right. But closure won't come easy. When Miami Metro's Angel Batista arrives with questions, Dexter realizes his past is catching up to him fast. As father and son navigate their own darkness in the city that never sleeps, they soon find themselves deeper than they ever imagined - and that the only way out is together.",
+      "poster_path": "/hIawSocuwqgNeRf3JuKuxgMHmSC.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "popularity": 118.8987,
+      "first_air_date": "2025-07-13",
+      "vote_average": 9.06,
+      "vote_count": 58,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg",
+      "id": 93405,
+      "name": "Squid Game",
+      "original_name": "\uc624\uc9d5\uc5b4 \uac8c\uc784",
+      "overview": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits \u2014 with deadly high stakes.",
+      "poster_path": "/1QdXdRYfktUSONkl1oD5gc6Be0s.jpg",
+      "media_type": "tv",
+      "original_language": "ko",
+      "genre_ids": [
+        10759,
+        9648,
+        18
+      ],
+      "popularity": 525.8591,
+      "first_air_date": "2021-09-17",
+      "vote_average": 7.866,
+      "vote_count": 16397,
+      "origin_country": [
+        "KR"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sKlF9YrVu84DYMDAUZEZDCvDxK2.jpg",
+      "id": 244808,
+      "name": "Nukitashi the Animation",
+      "original_name": "\u306c\u304d\u305f\u3057 THE ANIMATION",
+      "overview": "On Seiran Island, secret society NLNS is united by Junnosuke Tachibana, who is determined to crush a law. They have found a benefactor, an unknown rich man, who offers them a secret base and cash. Their mission is to locate a mysterious girl and stop the law, keeping the SHO off their trail.",
+      "poster_path": "/zlybZJXfu4IpPnWXhnRtobl9BgZ.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        35,
+        18,
+        10765
+      ],
+      "popularity": 286.224,
+      "first_air_date": "2025-07-19",
+      "vote_average": 5.5,
+      "vote_count": 2,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7NNNXo0qG2SqH4JoG7GPvJ2hzes.jpg",
+      "id": 93740,
+      "name": "Foundation",
+      "original_name": "Foundation",
+      "overview": "Follow a band of exiles on their monumental journey to save humanity and rebuild civilization amid the fall of the Galactic Empire.",
+      "poster_path": "/tg9I5pOY4M9CKj8U0cxVBTsm5eh.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        10765,
+        18
+      ],
+      "popularity": 112.5695,
+      "first_air_date": "2021-09-23",
+      "vote_average": 7.8,
+      "vote_count": 1413,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg",
+      "id": 37854,
+      "name": "One Piece",
+      "original_name": "\u30ef\u30f3\u30d4\u30fc\u30b9",
+      "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \"Devil Fruit,\" decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he's surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
+      "poster_path": "/cMD9Ygz11zjJzAovURpO75Qg7rT.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        10759,
+        35,
+        16
+      ],
+      "popularity": 108.2245,
+      "first_air_date": "1999-10-20",
+      "vote_average": 8.723,
+      "vote_count": 4943,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/627K48naKH2Y3Rz47Ydra4qktdI.jpg",
+      "id": 103516,
+      "name": "Star Trek: Strange New Worlds",
+      "original_name": "Star Trek: Strange New Worlds",
+      "overview": "Follow Captain Christopher Pike, Science Officer Spock and Number One in the years before Captain Kirk boarded the U.S.S. Enterprise, as they explore new worlds around the galaxy.",
+      "poster_path": "/w6KapI2JvrCkOPmQhkwYPJNjqeo.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        10765
+      ],
+      "popularity": 136.6638,
+      "first_air_date": "2022-05-05",
+      "vote_average": 8.088,
+      "vote_count": 626,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uNTrRKIOyKYISthoeizghtXPEOK.jpg",
+      "id": 240411,
+      "name": "Dan Da Dan",
+      "original_name": "\u30c0\u30f3\u30c0\u30c0\u30f3",
+      "overview": "In a bet to prove whether ghosts or aliens exist, two high schoolers face terrifying paranormal threats, gain superpowers and maybe even fall in love?!",
+      "poster_path": "/tiF5I6wF6tEUy39gmNtw3G1GYyz.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        10759,
+        35,
+        10765
+      ],
+      "popularity": 118.7951,
+      "first_air_date": "2024-10-04",
+      "vote_average": 8.647,
+      "vote_count": 562,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gWPK2RIVJ6i3myf7Xdw8DqlznT8.jpg",
+      "id": 123249,
+      "name": "My Dress-Up Darling",
+      "original_name": "\u305d\u306e\u7740\u305b\u66ff\u3048\u4eba\u5f62\u306f\u604b\u3092\u3059\u308b",
+      "overview": "High schooler Wakana Gojo wants to become a kashirashi\u2014a master craftsman who makes traditional Japanese Hina dolls. Though he's gung-ho about the craft, he knows nothing about the latest trends, and has a hard time fitting in with his class. The popular kids\u2014especially one girl, Marin Kitagawa\u2014seem like they live in a completely different world. That all changes one day, when she shares an unexpected secret with him, and their completely different worlds collide.",
+      "poster_path": "/A6mxBwvvv63JXZm3xXKv4SugE0L.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        35,
+        18
+      ],
+      "popularity": 55.9303,
+      "first_air_date": "2022-01-09",
+      "vote_average": 8.5,
+      "vote_count": 769,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jCQV3rHNbgHKo3N4G6CARbVEjPV.jpg",
+      "id": 194766,
+      "name": "The Summer I Turned Pretty",
+      "original_name": "The Summer I Turned Pretty",
+      "overview": "Every summer, Belly and her family head to the Fishers\u2019 beach house in Cousins. Every summer is the same ... until Belly turns sixteen. Relationships will be tested, painful truths will be revealed, and Belly will be forever changed. It\u2019s a summer of first love, first heartbreak and growing up \u2014 it's the summer she turns pretty.",
+      "poster_path": "/s85u6WqkfkVBOrWDMKrefnU1g1n.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        18
+      ],
+      "popularity": 306.5784,
+      "first_air_date": "2022-06-16",
+      "vote_average": 8.153,
+      "vote_count": 832,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hYwZR2P8MNJZz2Dnj68M8bUOfLt.jpg",
+      "id": 231280,
+      "name": "GOOD BOY",
+      "original_name": "\uad7f\ubcf4\uc774",
+      "overview": "After 11 years, the police revive their special recruitment for former national athletes. Once hailed as heroes, these world-class medalists now face harsh realities. Despite financial struggles, unexpected tragedies, and discrimination within the force, the athletes, each with their own story, reunite as a special task force to take on major crimes with the grit and skills they honed as athletes.",
+      "poster_path": "/59MAdHaHepsz3uDCU1LyoNQcLlT.jpg",
+      "media_type": "tv",
+      "original_language": "ko",
+      "genre_ids": [
+        80,
+        35,
+        10759,
+        18
+      ],
+      "popularity": 104.2794,
+      "first_air_date": "2025-05-31",
+      "vote_average": 8.792,
+      "vote_count": 60,
+      "origin_country": [
+        "KR"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tQqbbxBAdW2ql8vbOqMOJbtSQ7O.jpg",
+      "id": 247718,
+      "name": "MobLand",
+      "original_name": "MobLand",
+      "overview": "Two mob families clash in a war that threatens to topple empires and lives.",
+      "poster_path": "/abeH7n5pcuQcwYcTxG6DTZvXLP1.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "popularity": 91.3978,
+      "first_air_date": "2025-03-30",
+      "vote_average": 8.447,
+      "vote_count": 303,
+      "origin_country": [
+        "GB",
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/x0rCzswwYCEm4HM3c8v8L8olB2X.jpg",
+      "id": 232402,
+      "name": "S Line",
+      "original_name": "S\ub77c\uc778",
+      "overview": "The show will present of a cryptic red line that appears over head of the people in the show.",
+      "poster_path": "/7TGolwcia6AI6uvInBOoedAi9Il.jpg",
+      "media_type": "tv",
+      "original_language": "ko",
+      "genre_ids": [
+        10765,
+        18,
+        9648
+      ],
+      "popularity": 198.6025,
+      "first_air_date": "2025-07-11",
+      "vote_average": 7.628,
+      "vote_count": 43,
+      "origin_country": [
+        "KR"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ffvaWDSYLcIQRCLFLG1a3lC0xPX.jpg",
+      "id": 82739,
+      "name": "Rascal Does Not Dream of Bunny Girl Senpai",
+      "original_name": "\u9752\u6625\u30d6\u30bf\u91ce\u90ce\u306f\u30d0\u30cb\u30fc\u30ac\u30fc\u30eb\u5148\u8f29\u306e\u5922\u3092\u898b\u306a\u3044",
+      "overview": "Puberty Syndrome\u2014a rumored, mysterious syndrome that only affects those in their puberty. For example, a bunny girl suddenly appeared in front of Sakuta Azusagawa. The bunny girl's real identity is Mai Sakurajima, a teenage celebrity who is currently an inactive high school senior. For some reason, her charming figure does not reflect in the eyes of others. In the course of revealing the mystery behind this phenomenon, Sakuta begins to explore his feelings towards Mai. Set in a city where the skies and seas shine, Sakuta unfolds the meaning behind his bizarre encounters on women with the said syndrome.",
+      "poster_path": "/r0td1J4kALobMwjPKLGe7RwJ07o.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        35,
+        9648,
+        18
+      ],
+      "popularity": 58.0532,
+      "first_air_date": "2018-10-04",
+      "vote_average": 8.556,
+      "vote_count": 1248,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg",
+      "id": 66732,
+      "name": "Stranger Things",
+      "original_name": "Stranger Things",
+      "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+      "poster_path": "/uOOtwVbSr4QDjAGIifLDwpb2Pdl.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        18,
+        10765,
+        9648
+      ],
+      "popularity": 166.9823,
+      "first_air_date": "2016-07-15",
+      "vote_average": 8.596,
+      "vote_count": 18523,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/aok7IhrbA83josNz9Dqh8tNA0Ao.jpg",
+      "id": 1429,
+      "name": "Attack on Titan",
+      "original_name": "\u9032\u6483\u306e\u5de8\u4eba",
+      "overview": "Many years ago, the last remnants of humanity were forced to retreat behind the towering walls of a fortified city to escape the massive, man-eating Titans that roamed the land outside their fortress. Only the heroic members of the Scouting Legion dared to stray beyond the safety of the walls \u2013 but even those brave warriors seldom returned alive. Those within the city clung to the illusion of a peaceful existence until the day that dream was shattered, and their slim chance at survival was reduced to one horrifying choice: kill \u2013 or be devoured!",
+      "poster_path": "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        10765,
+        10759
+      ],
+      "popularity": 48.7153,
+      "first_air_date": "2013-04-07",
+      "vote_average": 8.668,
+      "vote_count": 6863,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/Ao5pBFuWY32cVuh6iYjEjZMEscN.jpg",
+      "id": 60625,
+      "name": "Rick and Morty",
+      "original_name": "Rick and Morty",
+      "overview": "Rick is a mentally-unbalanced but scientifically gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school.",
+      "poster_path": "/WGRQ8FpjkDTzivQJ43t94bOuY0.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        16,
+        35,
+        10765,
+        10759
+      ],
+      "popularity": 227.8695,
+      "first_air_date": "2013-12-02",
+      "vote_average": 8.69,
+      "vote_count": 10289,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/svdtJsa1ZhZ31zcc5XGEMbbI52j.jpg",
+      "id": 241554,
+      "name": "Murderbot",
+      "original_name": "Murderbot",
+      "overview": "In a high-tech future, a rogue security robot secretly gains free will. To stay hidden, it reluctantly joins a new mission protecting scientists on a dangerous planet...even though it just wants to binge soap operas.",
+      "poster_path": "/9uRLThggIXKZYtaqk5snYQdH51t.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        35,
+        18,
+        10765
+      ],
+      "popularity": 87.9614,
+      "first_air_date": "2025-05-15",
+      "vote_average": 7.45,
+      "vote_count": 228,
+      "origin_country": [
+        "US"
+      ]
+    }
+  ],
+  "all_content": [
+    {
+      "adult": false,
+      "backdrop_path": "/9DrORnlwnjt5SeJKcuE5sqOoIdV.jpg",
+      "id": 207468,
+      "name": "Kaiju No. 8",
+      "original_name": "\u602a\u7363\uff18\u53f7",
+      "overview": "In a world plagued by creatures known as Kaiju, Kafka Hibino aspired to enlist in The Defense Force. He makes a promise to enlist with his childhood friend, Mina Ashiro. Soon, life takes them in separate ways. While employed cleaning up after Kaiju battles, Kafka meets Reno Ichikawa. Reno's determination to join The Defense Force reawakens Kafka's promise to join Mina and protect humanity.",
+      "poster_path": "/bJxGs0w5RAhaX4fIUQu511rvm0S.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        10759,
+        10765
+      ],
+      "popularity": 107.9528,
+      "first_air_date": "2024-04-13",
+      "vote_average": 8.6,
+      "vote_count": 560,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/etT14XfDEqhQZdD47ywpyihXPyW.jpg",
+      "id": 1087192,
+      "title": "How to Train Your Dragon",
+      "original_title": "How to Train Your Dragon",
+      "overview": "On the rugged isle of Berk, where Vikings and dragons have been bitter enemies for generations, Hiccup stands apart, defying centuries of tradition when he befriends Toothless, a feared Night Fury dragon. Their unlikely bond reveals the true nature of dragons, challenging the very foundations of Viking society.",
+      "poster_path": "/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        14,
+        10751,
+        28
+      ],
+      "popularity": 1173.2922,
+      "release_date": "2025-06-06",
+      "video": false,
+      "vote_average": 8.127,
+      "vote_count": 1002
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ApRxyHFuvv5yghedxXPJSm9FEDe.jpg",
+      "id": 1061474,
+      "title": "Superman",
+      "original_title": "Superman",
+      "overview": "Superman, a journalist in Metropolis, embarks on a journey to reconcile his Kryptonian heritage with his human upbringing as Clark Kent.",
+      "poster_path": "/ombsmhYUqR4qqOLOxAyr5V8hbyv.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "popularity": 434.5607,
+      "release_date": "2025-07-09",
+      "video": false,
+      "vote_average": 7.496,
+      "vote_count": 957
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/63RnEJRNzRDvi0Fv4jhrT2eh0fl.jpg",
+      "id": 1311031,
+      "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "original_title": "\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u57ce\u7de8 \u7b2c\u4e00\u7ae0 \u7317\u7aa9\u5ea7\u518d\u6765",
+      "overview": "As the Demon Slayer Corps members and Hashira engaged in a group strength training program, the Hashira Training, in preparation for the forthcoming battle against the demons, Muzan Kibutsuji appears at the Ubuyashiki Mansion. With the head of the Demon Corps in danger, Tanjiro and the Hashira rush to the headquarters but are plunged into a deep descent to a mysterious space by the hands of Muzan Kibutsuji.  The destination of where Tanjiro and Demon Slayer Corps have fallen is the demons' stronghold \u2013 the Infinity Castle. And so, the battleground is set as the final battle between the Demon Slayer Corps and the demons ignites.",
+      "poster_path": "/aFRDH3P7TX61FVGpaLhKr6QiOC1.jpg",
+      "media_type": "movie",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        28,
+        14,
+        53
+      ],
+      "popularity": 262.0004,
+      "release_date": "2025-07-18",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/s94NjfKkcSczZ1FembwmQZwsuwY.jpg",
+      "id": 617126,
+      "title": "The Fantastic Four: First Steps",
+      "original_title": "The Fantastic Four: First Steps",
+      "overview": "Against the vibrant backdrop of a 1960s-inspired, retro-futuristic world, Marvel's First Family is forced to balance their roles as heroes with the strength of their family bond, while defending Earth from a ravenous space god called Galactus and his enigmatic Herald, Silver Surfer.",
+      "poster_path": "/x26MtUlwtWD26d0G0FXcppxCJio.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12
+      ],
+      "popularity": 84.7121,
+      "release_date": "2025-07-23",
+      "video": false,
+      "vote_average": 8.4,
+      "vote_count": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cEQMqB3ahd4mfeUN6VGC0ouVnZZ.jpg",
+      "id": 1071585,
+      "title": "M3GAN 2.0",
+      "original_title": "M3GAN 2.0",
+      "overview": "After the underlying tech for M3GAN is stolen and misused by a powerful defense contractor to create a military-grade weapon known as Amelia, M3GAN's creator Gemma realizes that the only option is to resurrect M3GAN and give her a few upgrades, making her faster, stronger, and more lethal.",
+      "poster_path": "/4a63rQqIDTrYNdcnTXdPsQyxVLo.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        53
+      ],
+      "popularity": 897.113,
+      "release_date": "2025-06-25",
+      "video": false,
+      "vote_average": 7.712,
+      "vote_count": 373
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oGsh97JAA6LYu92B6TEswrjac8W.jpg",
+      "id": 248852,
+      "name": "UNTAMED",
+      "original_name": "UNTAMED",
+      "overview": "In the vast expanse of Yosemite National Park, a woman's death draws a federal agent into lawless terrain \u2014 where nature obeys no rules but its own.",
+      "poster_path": "/wCJSNZcLT7EuKKW35my9VLmrkR7.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        18
+      ],
+      "popularity": 177.8413,
+      "first_air_date": "2025-07-17",
+      "vote_average": 7.672,
+      "vote_count": 58,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hyxKzbKnVWWJelyO2fagFFTHu96.jpg",
+      "id": 1269208,
+      "title": "Wall to Wall",
+      "original_title": "84\uc81c\uacf1\ubbf8\ud130",
+      "overview": "A man who poured his life savings into a new apartment discovers its walls are full of disturbing noises, hostile neighbors and unsettling secrets.",
+      "poster_path": "/5hlNv3Kd9xovvSgrslWhMriGpZ8.jpg",
+      "media_type": "movie",
+      "original_language": "ko",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "popularity": 81.952,
+      "release_date": "2025-07-17",
+      "video": false,
+      "vote_average": 6.75,
+      "vote_count": 40
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rthMuZfFv4fqEU4JVbgSW9wQ8rs.jpg",
+      "id": 986056,
+      "title": "Thunderbolts*",
+      "original_title": "Thunderbolts*",
+      "overview": "After finding themselves ensnared in a death trap, seven disillusioned castoffs must embark on a dangerous mission that will force them to confront the darkest corners of their pasts.",
+      "poster_path": "/hqcexYHbiTBfDIdDWxrxPtVndBX.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        878,
+        12
+      ],
+      "popularity": 225.4589,
+      "release_date": "2025-04-30",
+      "video": false,
+      "vote_average": 7.436,
+      "vote_count": 1892
+    },
+    {
+      "adult": false,
+      "id": 1622390,
+      "name": "Lee Chae-dam",
+      "original_name": "Lee Chae-dam",
+      "media_type": "person",
+      "popularity": 2.1793,
+      "gender": 1,
+      "known_for_department": "Acting",
+      "profile_path": "/7wMyr6F3yzvbSpu2XMxSW3vObED.jpg"
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qwK9soQmmJ7kRdjLZVXblw3g7AQ.jpg",
+      "id": 7451,
+      "title": "xXx",
+      "original_title": "xXx",
+      "overview": "Xander Cage is your standard adrenaline junkie with no fear and a lousy attitude. When the US Government \"recruits\" him to go on a mission, he's not exactly thrilled. His mission: to gather information on an organization that may just be planning the destruction of the world, led by the nihilistic Yorgi.",
+      "poster_path": "/xeEw3eLeSFmJgXZzmF2Efww0q3s.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        12,
+        53,
+        80
+      ],
+      "popularity": 131.1256,
+      "release_date": "2002-08-09",
+      "video": false,
+      "vote_average": 5.949,
+      "vote_count": 4468
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/mcU5nwUqPJB6GeElDhKA68LKhqD.jpg",
+      "id": 253372,
+      "name": "The Institute",
+      "original_name": "The Institute",
+      "overview": "When 14 year old genius Luke Ellis is kidnapped, he awakens at The Institute, a facility full of children who all got there the same way he did, and who are all possessed of unusual abilities. In a nearby town, haunted former police officer Tim Jamieson has come looking to start a new life, but the peace and quiet won\u2019t last, as his story and Luke\u2019s are destined to collide.",
+      "poster_path": "/7JXZdWifaa6wL0XLRi0GJOlOA8y.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        9648,
+        10765
+      ],
+      "popularity": 94.4475,
+      "first_air_date": "2025-07-13",
+      "vote_average": 8.083,
+      "vote_count": 24,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hniP6c6Tss51qKc5vYMycDBDf9P.jpg",
+      "id": 1083433,
+      "title": "I Know What You Did Last Summer",
+      "original_title": "I Know What You Did Last Summer",
+      "overview": "When five friends inadvertently cause a deadly car accident, they cover up their involvement and make a pact to keep it a secret rather than face the consequences. A year later, their past comes back to haunt them and they're forced to confront a horrifying truth: someone knows what they did last summer\u2026and is hell-bent on revenge.",
+      "poster_path": "/A06yXys3hrCWu8xiNoHCFLTG5SH.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "popularity": 70.5847,
+      "release_date": "2025-07-16",
+      "video": false,
+      "vote_average": 5.754,
+      "vote_count": 57
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lSbblLngbeZIn6G4WXDcyQ6SLhw.jpg",
+      "id": 911430,
+      "title": "F1",
+      "original_title": "F1",
+      "overview": "Racing legend Sonny Hayes is coaxed out of retirement to lead a struggling Formula 1 team\u2014and mentor a young hotshot driver\u2014while chasing one more chance at glory.",
+      "poster_path": "/9PXZIUsSDh4alB80jheWX4fhZmy.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        18
+      ],
+      "popularity": 154.3843,
+      "release_date": "2025-06-25",
+      "video": false,
+      "vote_average": 7.627,
+      "vote_count": 830
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/l5jzuehwynnoEWUb9z25auHXQM.jpg",
+      "id": 259909,
+      "name": "Dexter: Resurrection",
+      "original_name": "Dexter: Resurrection",
+      "overview": "Dexter Morgan awakens from a coma to find Harrison gone without a trace. Realizing the weight of what he put his son through, Dexter sets out for New York City, determined to find him and make things right. But closure won't come easy. When Miami Metro's Angel Batista arrives with questions, Dexter realizes his past is catching up to him fast. As father and son navigate their own darkness in the city that never sleeps, they soon find themselves deeper than they ever imagined - and that the only way out is together.",
+      "poster_path": "/hIawSocuwqgNeRf3JuKuxgMHmSC.jpg",
+      "media_type": "tv",
+      "original_language": "en",
+      "genre_ids": [
+        80,
+        18
+      ],
+      "popularity": 118.8987,
+      "first_air_date": "2025-07-13",
+      "vote_average": 9.06,
+      "vote_count": 58,
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oPgXVSdGR9dGwbmvIToOCMmsdc2.jpg",
+      "id": 541671,
+      "title": "Ballerina",
+      "original_title": "Ballerina",
+      "overview": "Taking place during the events of John Wick: Chapter 3 \u2013 Parabellum, Eve Macarro begins her training in the assassin traditions of the Ruska Roma.",
+      "poster_path": "/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        28,
+        53,
+        80
+      ],
+      "popularity": 340.3796,
+      "release_date": "2025-06-04",
+      "video": false,
+      "vote_average": 7.481,
+      "vote_count": 1076
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg",
+      "id": 93405,
+      "name": "Squid Game",
+      "original_name": "\uc624\uc9d5\uc5b4 \uac8c\uc784",
+      "overview": "Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits \u2014 with deadly high stakes.",
+      "poster_path": "/1QdXdRYfktUSONkl1oD5gc6Be0s.jpg",
+      "media_type": "tv",
+      "original_language": "ko",
+      "genre_ids": [
+        10759,
+        9648,
+        18
+      ],
+      "popularity": 525.8591,
+      "first_air_date": "2021-09-17",
+      "vote_average": 7.866,
+      "vote_count": 16397,
+      "origin_country": [
+        "KR"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sKlF9YrVu84DYMDAUZEZDCvDxK2.jpg",
+      "id": 244808,
+      "name": "Nukitashi the Animation",
+      "original_name": "\u306c\u304d\u305f\u3057 THE ANIMATION",
+      "overview": "On Seiran Island, secret society NLNS is united by Junnosuke Tachibana, who is determined to crush a law. They have found a benefactor, an unknown rich man, who offers them a secret base and cash. Their mission is to locate a mysterious girl and stop the law, keeping the SHO off their trail.",
+      "poster_path": "/zlybZJXfu4IpPnWXhnRtobl9BgZ.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        35,
+        18,
+        10765
+      ],
+      "popularity": 286.224,
+      "first_air_date": "2025-07-19",
+      "vote_average": 5.5,
+      "vote_count": 2,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zNriRTr0kWwyaXPzdg1EIxf0BWk.jpg",
+      "id": 1234821,
+      "title": "Jurassic World Rebirth",
+      "original_title": "Jurassic World Rebirth",
+      "overview": "Five years after the events of Jurassic World Dominion, covert operations expert Zora Bennett is contracted to lead a skilled team on a top-secret mission to secure genetic material from the world's three most massive dinosaurs. When Zora's operation intersects with a civilian family whose boating expedition was capsized, they all find themselves stranded on an island where they come face-to-face with a sinister, shocking discovery that's been hidden from the world for decades.",
+      "poster_path": "/q0fGCmjLu42MPlSO9OYWpI5w86I.jpg",
+      "media_type": "movie",
+      "original_language": "en",
+      "genre_ids": [
+        878,
+        12,
+        28
+      ],
+      "popularity": 270.1476,
+      "release_date": "2025-07-01",
+      "video": false,
+      "vote_average": 6.368,
+      "vote_count": 713
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lP5kcBL67k4aduIEzlSTVRR4RBh.jpg",
+      "id": 1429834,
+      "title": "Almost Family",
+      "original_title": "Fam\u00edlia, Pero no Mucho",
+      "overview": "A Brazilian father finds a worthy opponent when he meets his daughter's Argentine in-laws, and a trip to Bariloche becomes the stage for a fun international rivalry.",
+      "poster_path": "/g0Q7m2s2k0ZWdzIs07AvPKHoA9Q.jpg",
+      "media_type": "movie",
+      "original_language": "pt",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 48.9619,
+      "release_date": "2025-07-17",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 7
+    }
+  ],
+  "sudden_spikes": [
+    {
+      "adult": false,
+      "backdrop_path": "/hyxKzbKnVWWJelyO2fagFFTHu96.jpg",
+      "id": 1269208,
+      "title": "Wall to Wall",
+      "original_title": "84\uc81c\uacf1\ubbf8\ud130",
+      "overview": "A man who poured his life savings into a new apartment discovers its walls are full of disturbing noises, hostile neighbors and unsettling secrets.",
+      "poster_path": "/5hlNv3Kd9xovvSgrslWhMriGpZ8.jpg",
+      "media_type": "movie",
+      "original_language": "ko",
+      "genre_ids": [
+        53,
+        18
+      ],
+      "popularity": 81.952,
+      "release_date": "2025-07-17",
+      "video": false,
+      "vote_average": 6.75,
+      "vote_count": 40
+    },
+    {
+      "adult": false,
+      "id": 1622390,
+      "name": "Lee Chae-dam",
+      "original_name": "Lee Chae-dam",
+      "media_type": "person",
+      "popularity": 2.1793,
+      "gender": 1,
+      "known_for_department": "Acting",
+      "profile_path": "/7wMyr6F3yzvbSpu2XMxSW3vObED.jpg"
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sKlF9YrVu84DYMDAUZEZDCvDxK2.jpg",
+      "id": 244808,
+      "name": "Nukitashi the Animation",
+      "original_name": "\u306c\u304d\u305f\u3057 THE ANIMATION",
+      "overview": "On Seiran Island, secret society NLNS is united by Junnosuke Tachibana, who is determined to crush a law. They have found a benefactor, an unknown rich man, who offers them a secret base and cash. Their mission is to locate a mysterious girl and stop the law, keeping the SHO off their trail.",
+      "poster_path": "/zlybZJXfu4IpPnWXhnRtobl9BgZ.jpg",
+      "media_type": "tv",
+      "original_language": "ja",
+      "genre_ids": [
+        16,
+        35,
+        18,
+        10765
+      ],
+      "popularity": 286.224,
+      "first_air_date": "2025-07-19",
+      "vote_average": 5.5,
+      "vote_count": 2,
+      "origin_country": [
+        "JP"
+      ]
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lP5kcBL67k4aduIEzlSTVRR4RBh.jpg",
+      "id": 1429834,
+      "title": "Almost Family",
+      "original_title": "Fam\u00edlia, Pero no Mucho",
+      "overview": "A Brazilian father finds a worthy opponent when he meets his daughter's Argentine in-laws, and a trip to Bariloche becomes the stage for a fun international rivalry.",
+      "poster_path": "/g0Q7m2s2k0ZWdzIs07AvPKHoA9Q.jpg",
+      "media_type": "movie",
+      "original_language": "pt",
+      "genre_ids": [
+        35
+      ],
+      "popularity": 48.9619,
+      "release_date": "2025-07-17",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 7
+    }
+  ]
+}

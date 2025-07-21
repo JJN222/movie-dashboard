@@ -1,0 +1,972 @@
+{
+  "generated_at": "2025-07-20T15:42:43.572274",
+  "analysis_period": "7 days",
+  "summary": {
+    "total_trends": 13,
+    "rising_count": 8,
+    "declining_count": 5,
+    "avg_change_percent": 168.6587773827093,
+    "biggest_gainer": {
+      "content_id": 1087192,
+      "title": "How to Train Your Dragon",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 785.2933292148678,
+      "start_popularity": 132.53146288140988,
+      "current_popularity": 1173.2922,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 132.53146288140988
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 141.9225907674195
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 247.2261340330451
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 114.53019171920981
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 237.0144884727465
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        }
+      ]
+    },
+    "biggest_loser": {
+      "content_id": 1622390,
+      "title": "Lee Chae-dam",
+      "media_type": "person",
+      "trend_type": "Crashing",
+      "change_percent": -98.81227969989466,
+      "start_popularity": 183.48596044091508,
+      "current_popularity": 2.1793,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 183.48596044091508
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 144.91450192230653
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 113.97544261900984
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 148.18109458054425
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 61.19820783002986
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        }
+      ]
+    }
+  },
+  "detected_trends": [
+    {
+      "content_id": 1087192,
+      "title": "How to Train Your Dragon",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 785.2933292148678,
+      "start_popularity": 132.53146288140988,
+      "current_popularity": 1173.2922,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 132.53146288140988
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 141.9225907674195
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 247.2261340330451
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 114.53019171920981
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 237.0144884727465
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 1173.2922
+        }
+      ]
+    },
+    {
+      "content_id": 1071585,
+      "title": "M3GAN 2.0",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 574.4331965958417,
+      "start_popularity": 133.01732544129212,
+      "current_popularity": 897.113,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 133.01732544129212
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 100.03987965036357
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 73.95574806253418
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 167.0175640966397
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 104.56602882438263
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 897.113
+        }
+      ]
+    },
+    {
+      "content_id": 986056,
+      "title": "Thunderbolts*",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 160.97138074442873,
+      "start_popularity": 86.39219341096778,
+      "current_popularity": 225.4589,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 86.39219341096778
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 99.62260399457061
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 160.74724037115465
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 99.30433310308747
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 130.75373422266034
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 225.4589
+        }
+      ]
+    },
+    {
+      "content_id": 1061474,
+      "title": "Superman",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 141.3910616467509,
+      "start_popularity": 180.0235257409537,
+      "current_popularity": 434.5607,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 180.0235257409537
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 95.90096551364742
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 110.87738987718481
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 170.88107537429167
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 123.72973161188077
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 434.5607
+        }
+      ]
+    },
+    {
+      "content_id": 1311031,
+      "title": "Demon Slayer: Kimetsu no Yaiba Infinity Castle",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 114.29340457048663,
+      "start_popularity": 122.2624655785061,
+      "current_popularity": 262.0004,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 122.2624655785061
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 165.1738548388129
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 118.78319261638696
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 96.54131636813526
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 253.5015758885421
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 262.0004
+        }
+      ]
+    },
+    {
+      "content_id": 911430,
+      "title": "F1",
+      "media_type": "movie",
+      "trend_type": "Surging",
+      "change_percent": 101.12894208190045,
+      "start_popularity": 76.75886841642817,
+      "current_popularity": 154.3843,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 76.75886841642817
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 126.3575114519395
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 47.82981330669322
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 68.89262680878288
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 72.27699114694474
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 154.3843
+        }
+      ]
+    },
+    {
+      "content_id": 1622390,
+      "title": "Lee Chae-dam",
+      "media_type": "person",
+      "trend_type": "Crashing",
+      "change_percent": -98.81227969989466,
+      "start_popularity": 183.48596044091508,
+      "current_popularity": 2.1793,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 183.48596044091508
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 144.91450192230653
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 113.97544261900984
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 148.18109458054425
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 61.19820783002986
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 2.1793
+        }
+      ]
+    },
+    {
+      "content_id": 617126,
+      "title": "The Fantastic Four: First Steps",
+      "media_type": "movie",
+      "trend_type": "Declining",
+      "change_percent": -47.1035199482764,
+      "start_popularity": 160.14695102049558,
+      "current_popularity": 84.7121,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 160.14695102049558
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 190.26545823057813
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 187.55721251315595
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 255.16266086380156
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 160.75547656135382
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 84.7121
+        }
+      ]
+    },
+    {
+      "content_id": 1083433,
+      "title": "I Know What You Did Last Summer",
+      "media_type": "movie",
+      "trend_type": "Declining",
+      "change_percent": -43.597297150838365,
+      "start_popularity": 125.14418003826064,
+      "current_popularity": 70.5847,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 125.14418003826064
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 157.6007367696882
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 84.33138313560977
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 118.32144580567811
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 59.09139931940331
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 70.5847
+        }
+      ]
+    },
+    {
+      "content_id": 253372,
+      "title": "The Institute",
+      "media_type": "tv",
+      "trend_type": "Rising",
+      "change_percent": 43.54868398622974,
+      "start_popularity": 65.79475156251527,
+      "current_popularity": 94.4475,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 65.79475156251527
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 51.26791611682924
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 89.97202963874133
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 47.886164605363504
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 78.24372846094349
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 94.4475
+        }
+      ]
+    },
+    {
+      "content_id": 259909,
+      "title": "Dexter: Resurrection",
+      "media_type": "tv",
+      "trend_type": "Declining",
+      "change_percent": -32.222730354872326,
+      "start_popularity": 175.42562664819195,
+      "current_popularity": 118.8987,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 175.42562664819195
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 73.76317621529914
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 147.54019325103366
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 130.29222614821194
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 55.60317818838839
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 118.8987
+        }
+      ]
+    },
+    {
+      "content_id": 1269208,
+      "title": "Wall to Wall",
+      "media_type": "movie",
+      "trend_type": "Rising",
+      "change_percent": 28.27050614865111,
+      "start_popularity": 63.889979435355805,
+      "current_popularity": 81.952,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 63.889979435355805
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 186.43793051640176
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 76.3163002862736
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 83.31449672898172
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 148.93042531756566
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 81.952
+        }
+      ]
+    },
+    {
+      "content_id": 207468,
+      "title": "Kaiju No. 8",
+      "media_type": "tv",
+      "trend_type": "Declining",
+      "change_percent": -21.497773832182396,
+      "start_popularity": 137.5155906651929,
+      "current_popularity": 107.9528,
+      "days_tracked": 13,
+      "snapshots": [
+        {
+          "date": "2025-07-15",
+          "popularity": 137.5155906651929
+        },
+        {
+          "date": "2025-07-16",
+          "popularity": 71.6213731556094
+        },
+        {
+          "date": "2025-07-17",
+          "popularity": 207.94832242999288
+        },
+        {
+          "date": "2025-07-18",
+          "popularity": 178.63426965256397
+        },
+        {
+          "date": "2025-07-19",
+          "popularity": 220.38581781858085
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        },
+        {
+          "date": "2025-07-20",
+          "popularity": 107.9528
+        }
+      ]
+    }
+  ]
+}

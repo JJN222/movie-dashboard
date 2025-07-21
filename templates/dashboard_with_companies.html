@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie & TV Trends Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .controls {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-section {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .company-filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .company-search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .company-search-input {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .company-search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        .company-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9999;  /* Changed from 1000 to 9999 */
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Add shadow for better visibility */
+}
+
+        .company-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-option:hover {
+            background-color: #f8f9ff;
+        }
+
+        .company-option:last-child {
+            border-bottom: none;
+        }
+
+        .company-count {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .selected-companies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            min-height: 20px;
+        }
+
+        .company-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: slideIn 0.3s ease;
+        }
+
+        .company-tag .remove-btn {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .company-tag .remove-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .filter-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .refresh-btn, .clear-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .clear-btn {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e0e0e0;
+        }
+
+        .clear-btn:hover {
+            background: #e9ecef;
+            border-color: #ccc;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .trending-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .trending-list h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .trending-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .trending-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s ease;
+        }
+
+        .trending-item:hover {
+            background-color: #f8f9ff;
+            margin: 0 -10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 8px;
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .item-rank {
+            font-weight: bold;
+            color: #667eea;
+            width: 30px;
+            text-align: center;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .item-title:hover {
+            color: #667eea;
+        }
+
+        .item-type {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .item-companies {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        .item-popularity {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .search-results {
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-style: italic;
+        }
+
+        @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-actions {
+                flex-direction: row;
+            }
+        }
+
+        /* Force dropdown to appear above everything */
+        .company-search-container {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .company-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white !important;
+            border: 2px solid #e0e0e0 !important;
+            border-top: none !important;
+            border-radius: 0 0 8px 8px !important;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10001 !important;
+            display: none;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25) !important;
+        }
+
+        /* Ensure stats cards don't interfere */
+        .stats-grid {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            position: relative;
+            z-index: 1;
+        }
+        /* Ultimate dropdown fix */
+.company-search-container {
+    position: relative;
+    z-index: 99999 !important;
+}
+
+.company-dropdown {
+    position: fixed !important;
+    z-index: 99999 !important;
+    background: white !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+/* Remove backdrop-filter from stats cards when dropdown is open */
+.stats-grid {
+    position: relative;
+    z-index: 1 !important;
+}
+
+.stat-card {
+    position: relative;
+    z-index: 1 !important;
+}
+
+.controls {
+    position: relative;
+    z-index: 99998 !important;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 Movie & TV Trends Dashboard</h1>
+            <p>Discover and compare trends across multiple production companies</p>
+        </div>
+
+        <div class="controls">
+            <div class="filter-section">
+                <div class="company-filter-container">
+                    <label class="filter-label">🏭 Production Companies:</label>
+                    
+                    <div class="company-search-container">
+                        <input 
+                            type="text" 
+                            id="company-search" 
+                            class="company-search-input" 
+                            placeholder="Search production companies..."
+                        >
+                        <span class="search-icon">🔍</span>
+                        <div id="company-dropdown" class="company-dropdown"></div>
+                    </div>
+                    
+                    <div id="selected-companies" class="selected-companies">
+                        <!-- Selected companies will appear here as tags -->
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button id="refresh-btn" class="refresh-btn">🔄 Refresh Data</button>
+                    <button id="clear-companies-btn" class="clear-btn">🗑️ Clear All</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="total-snapshots">-</div>
+                <div class="stat-label">Total Data Points</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="unique-items">-</div>
+                <div class="stat-label">Tracked Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="filtered-results">-</div>
+                <div class="stat-label">Filtered Results</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="selected-companies-count">0</div>
+                <div class="stat-label">Selected Companies</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container">
+                <div id="movies-chart"></div>
+            </div>
+            <div class="chart-container">
+                <div id="tv-chart"></div>
+            </div>
+        </div>
+
+        <div class="trending-section">
+            <div class="trending-list">
+                <h2>🔥 Currently Trending</h2>
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search movies and TV shows...">
+                    <div id="search-results" class="search-results"></div>
+                </div>
+                <div class="trending-header">
+                    <div>Movie / TV Show</div>
+                    <div>Popularity Score</div>
+                </div>
+                <div id="trending-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class MovieTrendsDashboard {
+            constructor() {
+                this.selectedCompanies = [];
+                this.allCompanies = [];
+                this.filteredCompanies = [];
+                this.init();
+            }
+
+            async init() {
+                await this.loadProductionCompanies();
+                await this.loadDashboardData();
+                this.setupEventListeners();
+                this.setupSearch();
+                
+                // Auto-refresh every 5 minutes
+                setInterval(() => this.loadDashboardData(), 5 * 60 * 1000);
+            }
+
+            async loadProductionCompanies() {
+                try {
+                    const response = await fetch('/api/production-companies');
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.allCompanies = data.companies;
+                        this.filteredCompanies = [...this.allCompanies];
+                    }
+                } catch (error) {
+                    console.error('Error loading production companies:', error);
+                }
+            }
+
+            setupEventListeners() {
+                const companySearch = document.getElementById('company-search');
+                const companyDropdown = document.getElementById('company-dropdown');
+                const refreshBtn = document.getElementById('refresh-btn');
+                const clearBtn = document.getElementById('clear-companies-btn');
+
+                // Company search functionality
+                companySearch.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    this.filterCompanies(query);
+                    this.showCompanyDropdown();
+                });
+
+                companySearch.addEventListener('focus', () => {
+                    this.showCompanyDropdown();
+                });
+
+                // Hide dropdown when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.company-search-container')) {
+                        this.hideCompanyDropdown();
+                    }
+                });
+
+                refreshBtn.addEventListener('click', () => {
+                    this.loadDashboardData();
+                });
+
+                clearBtn.addEventListener('click', () => {
+                    this.clearAllCompanies();
+                });
+            }
+
+            filterCompanies(query) {
+                if (!query) {
+                    this.filteredCompanies = [...this.allCompanies];
+                } else {
+                    this.filteredCompanies = this.allCompanies.filter(([name, count]) =>
+                        name.toLowerCase().includes(query)
+                    );
+                }
+                this.updateCompanyDropdown();
+            }
+
+            updateCompanyDropdown() {
+                const dropdown = document.getElementById('company-dropdown');
+                
+                if (this.filteredCompanies.length === 0) {
+                    dropdown.innerHTML = '<div class="company-option">No companies found</div>';
+                    return;
+                }
+
+                dropdown.innerHTML = this.filteredCompanies
+                    .slice(0, 10) // Show max 10 results
+                    .map(([name, count]) => {
+                        const isSelected = this.selectedCompanies.includes(name);
+                        return `
+                            <div class="company-option ${isSelected ? 'selected' : ''}" data-company="${name}">
+                                <span>${name}</span>
+                                <span class="company-count">${count} items</span>
+                            </div>
+                        `;
+                    })
+                    .join('');
+
+                // Add click listeners to options
+                dropdown.querySelectorAll('.company-option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        const companyName = e.currentTarget.dataset.company;
+                        if (companyName) {
+                            this.toggleCompany(companyName);
+                        }
+                    });
+                });
+            }
+
+            showCompanyDropdown() {
+    const dropdown = document.getElementById('company-dropdown');
+    const searchInput = document.getElementById('company-search');
+    
+    this.updateCompanyDropdown();
+    
+    // Position dropdown relative to input
+    const rect = searchInput.getBoundingClientRect();
+    dropdown.style.position = 'fixed';
+    dropdown.style.top = (rect.bottom + 2) + 'px';
+    dropdown.style.left = rect.left + 'px';
+    dropdown.style.width = rect.width + 'px';
+    dropdown.style.display = 'block';
+}
+
+            hideCompanyDropdown() {
+                const dropdown = document.getElementById('company-dropdown');
+                dropdown.style.display = 'none';
+            }
+
+            toggleCompany(companyName) {
+                const index = this.selectedCompanies.indexOf(companyName);
+                
+                if (index === -1) {
+                    // Add company
+                    this.selectedCompanies.push(companyName);
+                } else {
+                    // Remove company
+                    this.selectedCompanies.splice(index, 1);
+                }
+                
+                this.updateSelectedCompaniesDisplay();
+                this.loadDashboardData();
+                this.updateCompanyDropdown();
+                
+                // Clear search input
+                document.getElementById('company-search').value = '';
+                this.filterCompanies('');
+            }
+
+            removeCompany(companyName) {
+                const index = this.selectedCompanies.indexOf(companyName);
+                if (index !== -1) {
+                    this.selectedCompanies.splice(index, 1);
+                    this.updateSelectedCompaniesDisplay();
+                    this.loadDashboardData();
+                }
+            }
+
+            clearAllCompanies() {
+                this.selectedCompanies = [];
+                this.updateSelectedCompaniesDisplay();
+                this.loadDashboardData();
+                document.getElementById('company-search').value = '';
+                this.filterCompanies('');
+            }
+
+            updateSelectedCompaniesDisplay() {
+                const container = document.getElementById('selected-companies');
+                const countDisplay = document.getElementById('selected-companies-count');
+                
+                countDisplay.textContent = this.selectedCompanies.length;
+                
+                if (this.selectedCompanies.length === 0) {
+                    container.innerHTML = '<span style="color: #999; font-style: italic;">No companies selected - showing all content</span>';
+                    return;
+                }
+
+                container.innerHTML = this.selectedCompanies.map(company => `
+                    <div class="company-tag">
+                        <span>${company}</span>
+                        <button class="remove-btn" onclick="dashboard.removeCompany('${company}')" title="Remove ${company}">×</button>
+                    </div>
+                `).join('');
+            }
+
+            async loadDashboardData() {
+                try {
+                    const companiesParam = this.selectedCompanies.length > 0 
+                        ? this.selectedCompanies.join(',') 
+                        : 'all';
+                    
+                    const url = `/api/dashboard-data?companies=${encodeURIComponent(companiesParam)}`;
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        this.updateStats(data.stats);
+                        this.updateCharts(data.charts);
+                        this.updateTrendingList(data.top_trending);
+                    } else {
+                        this.showError(data.error || 'Failed to load dashboard data');
+                    }
+                } catch (error) {
+                    console.error('Error loading dashboard data:', error);
+                    this.showError('Failed to load dashboard data');
+                }
+            }
+
+            updateStats(stats) {
+                document.getElementById('total-snapshots').textContent = stats.total_snapshots?.toLocaleString() || '-';
+                document.getElementById('unique-items').textContent = stats.unique_items?.toLocaleString() || '-';
+                document.getElementById('filtered-results').textContent = stats.filtered_results?.toLocaleString() || '-';
+            }
+
+            updateCharts(charts) {
+                if (charts.top_movies) {
+                    try {
+                        const moviesData = JSON.parse(charts.top_movies);
+                        Plotly.newPlot('movies-chart', moviesData.data, moviesData.layout, {
+                            responsive: true,
+                            displayModeBar: false
+                        });
+                    } catch (e) {
+                        document.getElementById('movies-chart').innerHTML = '<div class="no-results">No movie data available</div>';
+                    }
+                }
+
+                if (charts.top_tv) {
+                    try {
+                        const tvData = JSON.parse(charts.top_tv);
+                        Plotly.newPlot('tv-chart', tvData.data, tvData.layout, {
+                            responsive: true,
+                            displayModeBar: false
+                        });
+                    } catch (e) {
+                        document.getElementById('tv-chart').innerHTML = '<div class="no-results">No TV show data available</div>';
+                    }
+                }
+            }
+
+            updateTrendingList(items) {
+                const container = document.getElementById('trending-items');
+                
+                if (!items || items.length === 0) {
+                    const message = this.selectedCompanies.length > 0 
+                        ? `No trending data available for: ${this.selectedCompanies.join(', ')}`
+                        : 'No trending data available';
+                    container.innerHTML = `<div class="no-results">${message}</div>`;
+                    return;
+                }
+
+                container.innerHTML = items.slice(0, 15).map((item, index) => {
+                    // Create IMDB link if available
+                    const imdbLink = item.imdb_id ? `https://www.imdb.com/title/${item.imdb_id}/` : '#';
+                    const titleElement = item.imdb_id
+                        ? `<a href="${imdbLink}" target="_blank" style="color: inherit; text-decoration: none; cursor: pointer;"
+                             onmouseover="this.style.textDecoration='underline'"
+                             onmouseout="this.style.textDecoration='none'"
+                             title="Click to view on IMDB">
+                             ${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}
+                           </a>`
+                        : `${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}`;
+
+                    // Parse production companies
+                    let companiesText = '';
+                    try {
+                        const companies = Array.isArray(item.production_companies) 
+                            ? item.production_companies 
+                            : JSON.parse(item.production_companies || '[]');
+                        if (companies.length > 0) {
+                            companiesText = companies.slice(0, 2).join(', ');
+                            if (companies.length > 2) {
+                                companiesText += ` (+${companies.length - 2} more)`;
+                            }
+                        }
+                    } catch (e) {
+                        companiesText = 'No companies listed';
+                    }
+
+                    return `
+                        <div class="trending-item">
+                            <div class="item-info">
+                                <div class="item-rank">${index + 1}</div>
+                                <div>
+                                    <div class="item-title">${titleElement}</div>
+                                    <div class="item-type">${item.media_type.toUpperCase()} • ⭐ ${item.vote_average.toFixed(1)}/10</div>
+                                    <div class="item-companies">🏭 ${companiesText}</div>
+                                </div>
+                            </div>
+                            <div class="item-popularity">${item.popularity.toFixed(1)}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            setupSearch() {
+                const searchInput = document.getElementById('search-input');
+                const searchResults = document.getElementById('search-results');
+                let searchTimeout;
+
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    const query = e.target.value.trim();
+
+                    if (query.length < 2) {
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+
+                    searchTimeout = setTimeout(() => {
+                        this.performSearch(query);
+                    }, 300);
+                });
+            }
+
+            async performSearch(query) {
+                const searchResults = document.getElementById('search-results');
+                
+                try {
+                    const response = await fetch(`/api/search/${encodeURIComponent(query)}`);
+                    const data = await response.json();
+                    
+                    if (data.success && data.results.length > 0) {
+                        this.displaySearchResults(data.results);
+                    } else {
+                        searchResults.innerHTML = '<div class="no-results">No results found</div>';
+                    }
+                } catch (error) {
+                    console.error('Search error:', error);
+                    searchResults.innerHTML = '<div class="no-results">Search error occurred</div>';
+                }
+            }
+
+            displaySearchResults(results) {
+                const searchResults = document.getElementById('search-results');
+                
+                searchResults.innerHTML = results.slice(0, 10).map(item => {
+                    const imdbLink = item.imdb_id ? `https://www.imdb.com/title/${item.imdb_id}/` : '#';
+                    const titleElement = item.imdb_id
+                        ? `<a href="${imdbLink}" target="_blank" style="color: inherit; text-decoration: none;">
+                             ${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}
+                           </a>`
+                        : `${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}`;
+
+                    // Parse production companies for search results
+                    let companiesText = 'No companies listed';
+                    try {
+                        const companies = item.production_companies || [];
+                        if (companies.length > 0) {
+                            companiesText = companies.slice(0, 2).join(', ');
+                            if (companies.length > 2) {
+                                companiesText += ` (+${companies.length - 2} more)`;
+                            }
+                        }
+                    } catch (e) {
+                        // Keep default text
+                    }
+
+                    return `
+                        <div class="trending-item">
+                            <div class="item-info">
+                                <div class="item-rank">🔍</div>
+                                <div>
+                                    <div class="item-title">${titleElement}</div>
+                                    <div class="item-type">${item.media_type.toUpperCase()} • ⭐ ${item.vote_average.toFixed(1)}/10</div>
+                                    <div class="item-companies">🏭 ${companiesText}</div>
+                                </div>
+                            </div>
+                            <div class="item-popularity">${item.popularity.toFixed(1)}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            showError(message) {
+                const container = document.getElementById('trending-items');
+                container.innerHTML = `<div class="loading">❌ ${message}</div>`;
+            }
+        }
+
+        // Initialize dashboard when page loads
+        let dashboard;
+        document.addEventListener('DOMContentLoaded', () => {
+            dashboard = new MovieTrendsDashboard();
+        });
+    </script>
+</body>
+</html>

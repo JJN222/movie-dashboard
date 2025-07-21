@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Movie Trends Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .search-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .trending-list {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .trending-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .trending-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-rank {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-type {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .item-popularity {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .error {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .search-result-item {
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 Movie Trends Dashboard</h1>
+            <p>Real-time analysis of entertainment popularity and trends</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number" id="total-snapshots">-</div>
+                <div class="label">Total Data Points</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="unique-items">-</div>
+                <div class="label">Tracked Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="last-updated">-</div>
+                <div class="label">Last Updated</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+    <div class="chart-container">
+        <div id="movies-chart"></div>
+    </div>
+    <div class="chart-container">
+        <div id="tv-chart"></div>
+    </div>
+</div>
+
+        <div class="search-section">
+            <h2>🔍 Search Content</h2>
+            <input 
+                type="text" 
+                class="search-input" 
+                id="search-input" 
+                placeholder="Search for movies, TV shows..."
+            >
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div class="trending-list">
+    <h2>🔥 Currently Trending</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 2px solid #e0e0e0; margin-bottom: 20px; font-weight: bold; color: #666;">
+        <div>Movie / TV Show</div>
+        <div>Popularity Score</div>
+    </div>
+    <div id="trending-items"></div>
+</div>
+    </div>
+
+    <script>
+        class MovieTrendsDashboard {
+            constructor() {
+                this.init();
+            }
+
+            async init() {
+                await this.loadDashboardData();
+                this.setupSearch();
+                
+                // Auto-refresh every 5 minutes
+                setInterval(() => {
+                    this.loadDashboardData();
+                }, 5 * 60 * 1000);
+            }
+
+            async loadDashboardData() {
+                try {
+                    const response = await axios.get('/api/dashboard-data');
+                    const data = response.data;
+
+                    if (data.success) {
+                        this.updateStats(data.stats);
+                        this.updateCharts(data.charts);
+                        this.updateTrendingList(data.top_trending);
+                    } else {
+                        this.showError('Failed to load dashboard data');
+                    }
+                } catch (error) {
+                    this.showError('Error connecting to server');
+                    console.error('Dashboard load error:', error);
+                }
+            }
+
+            updateStats(stats) {
+                document.getElementById('total-snapshots').textContent = stats.total_snapshots.toLocaleString();
+                document.getElementById('unique-items').textContent = stats.unique_items.toLocaleString();
+                document.getElementById('last-updated').textContent = new Date(stats.last_updated).toLocaleTimeString();
+            }
+
+            updateCharts(charts) {
+    if (charts.top_movies) {
+        const moviesData = JSON.parse(charts.top_movies);
+        Plotly.newPlot('movies-chart', moviesData.data, moviesData.layout, {
+            responsive: true,
+            displayModeBar: false
+        });
+    }
+
+    if (charts.top_tv) {
+        const tvData = JSON.parse(charts.top_tv);
+        Plotly.newPlot('tv-chart', tvData.data, tvData.layout, {
+            responsive: true,
+            displayModeBar: false
+        });
+    }
+}
+
+            updateTrendingList(items) {
+    const container = document.getElementById('trending-items');
+    
+    if (!items || items.length === 0) {
+        container.innerHTML = '<div class="loading">No trending data available</div>';
+        return;
+    }
+
+    container.innerHTML = items.slice(0, 15).map((item, index) => {
+        // Create IMDB link if available
+        const imdbLink = item.imdb_id ? `https://www.imdb.com/title/${item.imdb_id}/` : '#';
+        const titleElement = item.imdb_id 
+            ? `<a href="${imdbLink}" target="_blank" style="color: inherit; text-decoration: none; cursor: pointer;" 
+                 onmouseover="this.style.textDecoration='underline'" 
+                 onmouseout="this.style.textDecoration='none'"
+                 title="Click to view on IMDB">
+                 ${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}
+               </a>`
+            : `${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}`;
+
+        return `
+            <div class="trending-item">
+                <div class="item-info">
+                    <div class="item-rank">${index + 1}</div>
+                    <div>
+                        <div class="item-title">
+                            ${titleElement}
+                        </div>
+                        <div class="item-type">${item.media_type.toUpperCase()} • ⭐ ${item.vote_average.toFixed(1)}/10</div>
+                    </div>
+                </div>
+                <div class="item-popularity">${item.popularity.toFixed(1)}</div>
+            </div>
+        `;
+    }).join('');
+}
+
+            setupSearch() {
+                const searchInput = document.getElementById('search-input');
+                let searchTimeout;
+
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    const query = e.target.value.trim();
+
+                    if (query.length >= 2) {
+                        searchTimeout = setTimeout(() => {
+                            this.performSearch(query);
+                        }, 300);
+                    } else {
+                        document.getElementById('search-results').innerHTML = '';
+                    }
+                });
+            }
+
+            async performSearch(query) {
+                try {
+                    const response = await axios.get(`/api/search/${encodeURIComponent(query)}`);
+                    const data = response.data;
+
+                    if (data.success) {
+                        this.displaySearchResults(data.results);
+                    }
+                } catch (error) {
+                    console.error('Search error:', error);
+                }
+            }
+
+            displaySearchResults(results) {
+                const container = document.getElementById('search-results');
+
+                if (!results || results.length === 0) {
+                    container.innerHTML = '<div class="search-result-item">No results found</div>';
+                    return;
+                }
+
+                container.innerHTML = results.map(item => `
+                    <div class="search-result-item">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <strong>${item.media_type === 'movie' ? '🎬' : '📺'} ${item.title}</strong>
+                                <div style="font-size: 0.9rem; color: #666; margin-top: 5px;">
+                                    Average Popularity: ${item.avg_popularity.toFixed(1)} • 
+                                    Tracked: ${item.snapshots} times
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-weight: bold; color: #667eea;">
+                                    ${item.max_popularity.toFixed(1)}
+                                </div>
+                                <div style="font-size: 0.8rem; color: #999;">
+                                    Peak Popularity
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            showError(message) {
+                // You could implement error display here
+                console.error(message);
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new MovieTrendsDashboard();
+        });
+    </script>
+</body>
+</html>
