@@ -225,24 +225,33 @@ class WebTrendAnalyzer:
         conn.close()
         return companies[:100]
 
-    def create_simple_chart_data(self, top_trending, media_type, company_filters=None):
-        """Create simple chart data (no plotly)"""
-        if not top_trending:
-            return []
-        
-        # Filter by media type and take top 10
-        filtered_data = [item for item in top_trending if item.get('media_type') == media_type][:10]
-        
-        # Return simple data structure
-        chart_data = []
-        for item in filtered_data:
-            chart_data.append({
-                'title': item['title'],
-                'popularity': item['popularity'],
-                'rating': item['vote_average']
-            })
-        
-        return chart_data
+def create_simple_chart_data(self, top_trending, media_type, company_filters=None):
+    """Create simple HTML chart instead of plotly"""
+    if not top_trending:
+        return '<div class="no-data">No data available</div>'
+    
+    # Filter by media type and take top 10
+    filtered_data = [item for item in top_trending if item.get('media_type') == media_type][:10]
+    
+    if not filtered_data:
+        return f'<div class="no-data">No {media_type} data available</div>'
+    
+    # Create simple HTML bar chart
+    html = '<div class="simple-chart">'
+    max_popularity = max(item['popularity'] for item in filtered_data)
+    
+    for item in filtered_data:
+        width_percent = (item['popularity'] / max_popularity) * 100
+        html += f'''
+        <div class="chart-row">
+            <div class="chart-label">{item['title'][:30]}</div>
+            <div class="chart-bar" style="width: {width_percent}%"></div>
+            <div class="chart-value">{item['popularity']:.1f}</div>
+        </div>
+        '''
+    
+    html += '</div>'
+    return html
 
 # Initialize analyzer
 analyzer = WebTrendAnalyzer()
@@ -299,9 +308,12 @@ def api_dashboard_data():
                 'top_movies': movies_chart,
                 'top_tv': tv_chart
             },
-            'top_trending': recent_trends
-        })
-        
+            'top_trending': recent_trends,
+            'chart_html': {
+                'movies': movies_chart,
+                'tv': tv_chart
+            }
+        })        
     except Exception as e:
         print(f"❌ API Error: {e}")
         return jsonify({
