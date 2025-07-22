@@ -1,11 +1,14 @@
 # web_app.py
-# Simplified web interface - no pandas/plotly dependencies
+# Enhanced web interface with multi-select production company filtering
 
 from flask import Flask, render_template, jsonify, request
 import sqlite3
 import json
 import os
 from datetime import datetime, timedelta
+import plotly.graph_objs as go
+import plotly.utils
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -66,7 +69,7 @@ class WebTrendAnalyzer:
                 where_clause = " AND ".join(where_conditions)
                 limit_clause = "LIMIT 100"
             
-            # Build the final query
+            # Build the final query - FIXED DEDUPLICATION
             latest_query = f"""
             WITH deduplicated_data AS (
                 SELECT title, media_type, popularity, vote_average, imdb_id, production_companies,
@@ -81,15 +84,11 @@ class WebTrendAnalyzer:
             {limit_clause}
             """
             
-            # Execute query and convert to list of dictionaries
-            cursor.execute(latest_query)
-            results = cursor.fetchall()
-            columns = [description[0] for description in cursor.description]
-            top_trending = [dict(zip(columns, row)) for row in results]   
-
+            top_trending = pd.read_sql_query(latest_query, conn)
+            
         except Exception as e:
             print(f"❌ Query error: {e}")
-            # Fallback query
+            # Fallback query that should show "How to Train Your Dragon"
             basic_query = """
             WITH deduplicated_data AS (
                 SELECT title, media_type, popularity, vote_average, imdb_id, production_companies,
@@ -105,11 +104,8 @@ class WebTrendAnalyzer:
             ORDER BY popularity DESC
             LIMIT 100
             """
-            cursor.execute(basic_query)
-            results = cursor.fetchall()
-            columns = [description[0] for description in cursor.description]
-            top_trending = [dict(zip(columns, row)) for row in results]
-                  
+            top_trending = pd.read_sql_query(basic_query, conn)
+        
         finally:
             conn.close()
         
@@ -121,7 +117,7 @@ class WebTrendAnalyzer:
         }    
 
     def get_production_companies(self):
-        """Get list of all production companies with content counts"""
+        """Get list of all production companies with content counts - FIXED GROUPING"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
@@ -145,16 +141,16 @@ class WebTrendAnalyzer:
                         """, (f"%{company}%",))
                         count = cursor.fetchone()[0]
                         
-                        if count >= 3:
+                        if count >= 3:  # Only include companies with 3+ items
                             company_counts[company] = count
             except:
                 continue
         
-        # Apply smart grouping for major studios
+        # Now apply smart grouping for major studios
         grouped_counts = {}
         processed_companies = set()
         
-        # Define major studio groupings
+        # Define major studio groupings with exact company names
         studio_groups = {
             'Disney': [
                 'Walt Disney Pictures',
@@ -210,12 +206,12 @@ class WebTrendAnalyzer:
             if total_count > 0:
                 grouped_counts[group_name] = total_count
         
-        # Add remaining individual companies
+        # Add remaining individual companies (not part of major studio groups)
         for company, count in company_counts.items():
             if company not in processed_companies:
                 grouped_counts[company] = count
 
-        # Remove fake companies
+        # Remove fake companies created by partial matching
         grouped_counts.pop('Y Productions', None)
         grouped_counts.pop('ANIMA', None)
         grouped_counts.pop('anima', None)
@@ -225,34 +221,117 @@ class WebTrendAnalyzer:
         conn.close()
         return companies[:100]
 
-def create_simple_chart_data(self, top_trending, media_type, company_filters=None):
-    """Create simple HTML chart instead of plotly"""
-    if not top_trending:
-        return '<div class="no-data">No data available</div>'
-    
-    # Filter by media type and take top 10
-    filtered_data = [item for item in top_trending if item.get('media_type') == media_type][:10]
-    
-    if not filtered_data:
-        return f'<div class="no-data">No {media_type} data available</div>'
-    
-    # Create simple HTML bar chart
-    html = '<div class="simple-chart">'
-    max_popularity = max(item['popularity'] for item in filtered_data)
-    
-    for item in filtered_data:
-        width_percent = (item['popularity'] / max_popularity) * 100
-        html += f'''
-        <div class="chart-row">
-            <div class="chart-label">{item['title'][:30]}</div>
-            <div class="chart-bar" style="width: {width_percent}%"></div>
-            <div class="chart-value">{item['popularity']:.1f}</div>
-        </div>
-        '''
-    
-    html += '</div>'
-    return html
+    def create_top_movies_chart(self, top_trending, company_filters=None):
+        """Create bar chart of top trending movies only"""
+        if top_trending.empty:
+            return json.dumps({}, cls=plotly.utils.PlotlyJSONEncoder)
+        
+        try:
+            # Filter for movies only and take top 10
+            movies_only = top_trending[top_trending['media_type'] == 'movie'].head(10)
+            
+            if movies_only.empty:
+                return json.dumps({}, cls=plotly.utils.PlotlyJSONEncoder)
+            
+            movies_reversed = movies_only.iloc[::-1]  # Reverse for proper display
+            
+            # Movie colors
+            movie_colors = [
+                '#FF6B6B', '#FF8E53', '#FF6B9D', '#C44569', '#F8B500',
+                '#FF7675', '#E17055', '#D63031', '#A29BFE', '#6C5CE7'
+            ]
+            colors = movie_colors[:len(movies_reversed)][::-1]
+            
+            fig = go.Figure(data=[
+                go.Bar(
+                    x=movies_reversed['popularity'],
+                    y=movies_reversed['title'],
+                    orientation='h',
+                    marker=dict(color=colors),
+                    text=[f"{pop:.1f}" for pop in movies_reversed['popularity']],
+                    textposition='auto',
+                )
+            ])
+            
+            # Dynamic title based on selected companies
+            if company_filters and len(company_filters) > 0 and company_filters != ['all']:
+                if len(company_filters) == 1:
+                    title = f'🎬 Top 10 Movies - {company_filters[0]}'
+                else:
+                    title = f'🎬 Top 10 Movies - {len(company_filters)} Companies'
+            else:
+                title = '🎬 Top 10 Movies'
+            
+            fig.update_layout(
+                title=title,
+                xaxis_title='Popularity Score',
+                yaxis_title='',
+                template='plotly_white',
+                height=500
+            )
+            
+            return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            
+        except Exception as e:
+            print(f"❌ Movies chart error: {e}")
+            return json.dumps({}, cls=plotly.utils.PlotlyJSONEncoder)
 
+    def create_top_tv_chart(self, top_trending, company_filters=None):
+        """Create bar chart of top trending TV shows only"""
+        if top_trending.empty:
+            return json.dumps({}, cls=plotly.utils.PlotlyJSONEncoder)
+        
+        try:
+            # Filter for TV shows only and take top 10
+            tv_only = top_trending[top_trending['media_type'] == 'tv'].head(10) 
+            
+            if tv_only.empty:
+                return json.dumps({}, cls=plotly.utils.PlotlyJSONEncoder)
+            
+            tv_reversed = tv_only.iloc[::-1]  # Reverse for proper display
+            
+            # TV colors
+            tv_colors = [
+                '#4ECDC4', '#45B7D1', '#96CEB4', '#3DC1D3', '#00D2D3',
+                '#74B9FF', '#0984E3', '#00B894', '#55A3FF', '#26C6DA'
+            ]
+            colors = tv_colors[:len(tv_reversed)][::-1]
+            
+            fig = go.Figure(data=[
+                go.Bar(
+                    x=tv_reversed['popularity'],
+                    y=tv_reversed['title'],
+                    orientation='h',
+                    marker=dict(color=colors),
+                    text=[f"{pop:.1f}" for pop in tv_reversed['popularity']],
+                    textposition='auto',
+                )
+            ])
+            
+            # Dynamic title based on selected companies  
+            if company_filters and len(company_filters) > 0 and company_filters != ['all']:
+                tv_count = len(tv_only)  # Get actual count
+                if len(company_filters) == 1:
+                    title = f'📺 Top {tv_count} TV Shows - {company_filters[0]}'
+                else:
+                    title = f'📺 Top {tv_count} TV Shows - {len(company_filters)} Companies'
+            else:
+                title = '📺 Top 10 TV Shows'
+            
+            fig.update_layout(
+                title=title,
+                xaxis_title='Popularity Score',
+                yaxis_title='',
+                template='plotly_white',
+                height=500
+            )
+            
+            return json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+            
+        except Exception as e:
+            print(f"❌ TV chart error: {e}")
+            return json.dumps({}, cls=plotly.utils.PlotlyJSONEncoder)
+        
 # Initialize analyzer
 analyzer = WebTrendAnalyzer()
 
@@ -263,7 +342,7 @@ def dashboard():
 
 @app.route('/api/dashboard-data')
 def api_dashboard_data():
-    """API endpoint for dashboard data"""
+    """API endpoint for dashboard data with optional company filters"""
     try:
         companies_param = request.args.get('companies', 'all')
         
@@ -276,24 +355,24 @@ def api_dashboard_data():
         # Get data with company filters
         data = analyzer.get_dashboard_data(company_filters)
         
-        if not data['top_trending']:
+        if data['top_trending'].empty:
             # Return empty response if no data
             companies_text = ', '.join(company_filters) if company_filters else 'selected companies'
             return jsonify({
                 'success': False,
                 'error': f'No content found for {companies_text}',
                 'stats': {'total_snapshots': data['total_snapshots'], 'unique_items': data['unique_items']},
-                'charts': {'top_movies': [], 'top_tv': []},
+                'charts': {'top_movies': '{}', 'top_tv': '{}'},
                 'top_trending': [],
                 'company_filters': company_filters
             })
         
-        # Create simple chart data
-        movies_chart = analyzer.create_simple_chart_data(data['top_trending'], 'movie', company_filters)
-        tv_chart = analyzer.create_simple_chart_data(data['top_trending'], 'tv', company_filters)
-
-        # Get recent trends (first 15 items)
-        recent_trends = data['top_trending'][:15]
+        # Create charts with company filters
+        movies_chart = analyzer.create_top_movies_chart(data['top_trending'], company_filters)
+        tv_chart = analyzer.create_top_tv_chart(data['top_trending'], company_filters)
+        
+        # Get recent trends for trending list
+        recent_trends = data['top_trending'].head(15)
         
         return jsonify({
             'success': True,
@@ -308,12 +387,9 @@ def api_dashboard_data():
                 'top_movies': movies_chart,
                 'top_tv': tv_chart
             },
-            'top_trending': recent_trends,
-            'chart_html': {
-                'movies': movies_chart,
-                'tv': tv_chart
-            }
-        })        
+            'top_trending': recent_trends.to_dict('records')
+        })
+        
     except Exception as e:
         print(f"❌ API Error: {e}")
         return jsonify({
@@ -339,59 +415,58 @@ def api_production_companies():
 
 @app.route('/api/search/<query>')
 def search_content(query):
-    """Search for content"""
     try:
+        analyzer = WebTrendAnalyzer()
         conn = sqlite3.connect(analyzer.db_path)
-        cursor = conn.cursor()
         
+        # UPDATED SEARCH QUERY WITH DEDUPLICATION
         search_query = """
+        WITH deduplicated_search AS (
+            SELECT title, media_type, popularity, vote_average, imdb_id, production_companies,
+            ROW_NUMBER() OVER (PARTITION BY title, media_type ORDER BY popularity DESC, snapshot_time DESC) as rn
+            FROM popularity_snapshots
+            WHERE title LIKE ?
+            AND media_type IN ('movie', 'tv')
+            AND popularity > 10
+        )
         SELECT title, media_type, popularity, vote_average, imdb_id, production_companies
-        FROM popularity_snapshots
-        WHERE title LIKE ?
-        AND media_type IN ('movie', 'tv')
-        AND popularity > 10
+        FROM deduplicated_search
+        WHERE rn = 1
         ORDER BY popularity DESC
         LIMIT 20
         """
         
         search_param = f"%{query}%"
-        cursor.execute(search_query, (search_param,))
-        results = cursor.fetchall()
-        columns = [description[0] for description in cursor.description]
-        
+        df = pd.read_sql_query(search_query, conn, params=(search_param,))
         conn.close()
         
-        if not results:
+        if df.empty:
             return jsonify({'success': True, 'results': []})
         
-        # Convert to list of dictionaries
-        search_results = []
-        for row in results:
-            row_dict = dict(zip(columns, row))
+        # Process production companies for each result
+        results = []
+        for _, row in df.iterrows():
             try:
-                companies = json.loads(row_dict['production_companies']) if row_dict['production_companies'] else []
+                companies = json.loads(row['production_companies']) if row['production_companies'] else []
             except:
                 companies = []
             
-            search_results.append({
-                'title': row_dict['title'],
-                'media_type': row_dict['media_type'],
-                'popularity': row_dict['popularity'],
-                'vote_average': row_dict['vote_average'],
-                'imdb_id': row_dict['imdb_id'],
+            results.append({
+                'title': row['title'],
+                'media_type': row['media_type'],
+                'popularity': row['popularity'],
+                'vote_average': row['vote_average'],
+                'imdb_id': row['imdb_id'],
                 'production_companies': companies
             })
         
-        return jsonify({'success': True, 'results': search_results})
+        return jsonify({'success': True, 'results': results})
         
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
 if __name__ == '__main__':
-    print("🌐 Starting Movie Trends Web Server...")
-    print("📊 Dashboard available")
+    print("🌐 Starting Enhanced Movie Trends Web Server...")
+    print("📊 Dashboard with Multi-Select Production Company filter available at: http://localhost:8080")
     print("🔄 Press Ctrl+C to stop")
-    
-    # Use PORT environment variable for Render deployment
-    port = int(os.environ.get('PORT', 8080))
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=8080)
