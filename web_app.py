@@ -291,7 +291,7 @@ def api_dashboard_data():
         # Create simple chart data
         movies_chart = analyzer.create_simple_chart_data(data['top_trending'], 'movie', company_filters)
         tv_chart = analyzer.create_simple_chart_data(data['top_trending'], 'tv', company_filters)
-        
+
         # Get recent trends (first 15 items)
         recent_trends = data['top_trending'][:15]
         
