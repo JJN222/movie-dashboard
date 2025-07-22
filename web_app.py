@@ -466,7 +466,5 @@ def search_content(query):
         return jsonify({'success': False, 'error': str(e)})
 
 if __name__ == '__main__':
-    print("🌐 Starting Enhanced Movie Trends Web Server...")
-    print("📊 Dashboard with Multi-Select Production Company filter available at: http://localhost:8080")
-    print("🔄 Press Ctrl+C to stop")
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    port = int(os.environ.get('PORT', 8080))
+    app.run(debug=False, host='0.0.0.0', port=port)
